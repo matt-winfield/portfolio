@@ -1,5 +1,6 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheets as MuiServerStyleSheets } from '@material-ui/styles';
 
 export default class MyDocument extends Document {
 	render() {
@@ -17,14 +18,15 @@ export default class MyDocument extends Document {
 	}
 
 	static async getInitialProps(ctx: DocumentContext) {
-		const sheet = new ServerStyleSheet()
-		const originalRenderPage = ctx.renderPage
+		const sheet = new ServerStyleSheet();
+		const muiSheet = new MuiServerStyleSheets();
+		const originalRenderPage = ctx.renderPage;
 
 		try {
 			ctx.renderPage = () =>
 				originalRenderPage({
 					enhanceApp: (App) => (props) =>
-						sheet.collectStyles(<App {...props} />),
+						sheet.collectStyles(muiSheet.collect(<App {...props} />)),
 				})
 
 			const initialProps = await Document.getInitialProps(ctx)
@@ -33,12 +35,13 @@ export default class MyDocument extends Document {
 				styles: (
 					<>
 						{initialProps.styles}
+						{muiSheet.getStyleElement()}
 						{sheet.getStyleElement()}
 					</>
 				),
 			}
 		} finally {
-			sheet.seal()
+			sheet.seal();
 		}
 	}
 }
