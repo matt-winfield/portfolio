@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react"
+import React, { FunctionComponent } from "react"
 import CarouselItem from "./CarouselItem"
 import ProjectButton from "../ProjectButton";
 import CodeIcon from "@material-ui/icons/CodeRounded";
@@ -12,6 +12,7 @@ import { useRouter } from "next/dist/client/router";
 import Image from 'next/image';
 import { useBreakpoint } from "styled-breakpoints/react-styled";
 import { heightAspectRatio } from "../../utils/next-image-utils";
+import Link from "next/link";
 
 type CarouselItemProps = {
 	item: CarouselItem;
@@ -159,8 +160,11 @@ const CarouselItemComponent: FunctionComponent<CarouselItemProps> = (props) => {
 			<Buttons>
 				<Row>
 					{props.item.detailsLink &&
-						<Button variant="contained" onClick={onDetailsLinkClicked}
-							startIcon={<InfoIcon fontSize="large"></InfoIcon>}>Details</Button>
+						<Link href={props.item.detailsLink}>
+							<Button variant="contained" startIcon={<InfoIcon fontSize="large"></InfoIcon>}>
+								Details
+							</Button>
+						</Link>
 					}
 				</Row>
 				<Row>
