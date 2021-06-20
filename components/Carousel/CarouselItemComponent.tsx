@@ -144,14 +144,7 @@ const Button = styled(ProjectButton)`
 `
 
 const CarouselItemComponent: FunctionComponent<CarouselItemProps> = (props) => {
-	const router = useRouter();
 	const height = useBreakpoint(up('md')) ? 400 : 200;
-
-	const onDetailsLinkClicked = () => {
-		if (props.item.detailsLink) {
-			router.push(props.item.detailsLink);
-		}
-	}
 
 	return <>
 		<Item active={props.item.active} next={props.item.isNext} previous={props.item.isPrevious}>
