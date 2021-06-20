@@ -155,7 +155,7 @@ const CarouselItemComponent: FunctionComponent<CarouselItemProps> = (props) => {
 	return <>
 		<Item active={props.item.active} next={props.item.isNext} previous={props.item.isPrevious}>
 			<Title>{props.item.title}</Title>
-			<CoverImage src={props.item.image} alt="" {...heightAspectRatio(props.item.image, height)}></CoverImage>
+			<CoverImage src={props.item.image} alt="" {...heightAspectRatio(props.item.image, height)} placeholder="blur" />
 			<Buttons>
 				<Row>
 					{props.item.detailsLink &&

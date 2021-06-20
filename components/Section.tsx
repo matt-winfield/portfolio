@@ -71,6 +71,16 @@ const Body = styled.div`
 	}
 `
 
+const ImageContainer = styled.div`
+	border-radius: 10px;
+	border: 1px solid ${props => props.theme.palette.border.main};
+	overflow: hidden;
+
+	& > * {
+		vertical-align: top;
+	}
+`;
+
 const Section: FunctionComponent<SectionProps> = (props) => {
 	const imageWidth = useBreakpoint(up('md')) ? 250 : 200;
 
@@ -82,7 +92,10 @@ const Section: FunctionComponent<SectionProps> = (props) => {
 				<Body>
 					{props.children}
 					{props.image &&
-						<Image src={props.image} alt={props.imageAlt} {...widthAspectRatio(props.image, imageWidth)} />}
+						<ImageContainer>
+							<Image src={props.image} alt={props.imageAlt} {...widthAspectRatio(props.image, imageWidth)} />
+						</ImageContainer>
+					}
 				</Body>
 			</Content>
 		</Container>
