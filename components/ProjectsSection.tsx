@@ -20,7 +20,7 @@ const ProjectsSection = () => {
 	const [projects] = useState([
 		new CarouselItem('Chess', chessImage, '/chess', 'https://github.com/matt-winfield-chess', 'https://chess.matt-winfield.com/'),
 		new CarouselItem('2D Ray Tracing', raytracingImage, '/raytracing', 'https://github.com/matt-winfield/raytracing', 'https://raytracing.matt-winfield.com/'),
-		new CarouselItem('Digital Portfolio', portfolioImage, '/portfolio', 'https://github.com/matt-winfield/matt-winfield.github.io', 'https://www.matt-winfield.com/'),
+		new CarouselItem('Digital Portfolio', portfolioImage, '/portfolio', 'https://github.com/matt-winfield/portfolio', 'https://www.matt-winfield.com/'),
 		new CarouselItem('Lockdown Quiz Buzzer', quizBuzzerImage, '/buzzer', 'https://github.com/matt-winfield-quiz', 'https://quiz.matt-winfield.com/rooms'),
 	]);
 

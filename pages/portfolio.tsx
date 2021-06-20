@@ -15,7 +15,7 @@ const Portfolio = () => {
 		<Head>
 			<title>Digital Portfolio Project - Matt Winfield</title>
 		</Head>
-		<ProjectDetails title="Digital Portfolio Project" languagesAndTechnologies={languages} codeLink='https://github.com/matt-winfield/matt-winfield.github.io' demoLink='https://www.matt-winfield.com' image={portfolioImage} imageAlt="Portfolio project cover image">
+		<ProjectDetails title="Digital Portfolio Project" languagesAndTechnologies={languages} codeLink='https://github.com/matt-winfield/portfolio' demoLink='https://www.matt-winfield.com' image={portfolioImage} imageAlt="Portfolio project cover image">
 			<p>
 				The aim of the portfolio project was to produce a portfolio (the one you are currently looking at!) to present recruiters with a summary of me and my skills,
 				and provide an easy place to find my other projects and examples of my code. It can also serve as a demonstration of my ability to create a simple website.
