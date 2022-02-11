@@ -48,13 +48,15 @@ const EmploymentDuration = styled.span`
 	${down('sm')} {
 		display: block;
 		padding: 0;
+		font-size: 13px;
 	}
 `
 
 const startDate = DateTime.fromISO('2021-03-08T08:20:00');
 
 const getFormattedDate = (): string => {
-	const duration = DateTime.now().diff(startDate, ['years', 'months', 'days', 'hours', 'minutes', 'seconds'])
+	const nowSeconds = Math.floor(DateTime.now().toSeconds());
+	const duration = DateTime.fromSeconds(nowSeconds).diff(startDate, ['years', 'months', 'days', 'hours', 'minutes', 'seconds'])
 	return duration.toHuman({ maximumFractionDigits: 0, unitDisplay: 'short' });
 }
 
