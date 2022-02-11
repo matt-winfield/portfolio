@@ -51,7 +51,7 @@ const EmploymentDuration = styled.span`
 	}
 `
 
-const startDate = DateTime.fromISO('2021-03-08T11:50:00');
+const startDate = DateTime.fromISO('2021-03-08T08:20:00');
 
 const getFormattedDate = (): string => {
 	const duration = DateTime.now().diff(startDate, ['years', 'months', 'days', 'hours', 'minutes', 'seconds'])
