@@ -1,10 +1,9 @@
-import AboutSection from "../components/AboutSection";
-import ProjectsSection from "../components/ProjectsSection";
-import ExperienceSection from "../components/ExperienceSection";
-import QualificationsSection from "../components/QualificationsSection";
-import Layout from "../components/Layout";
-import React from "react";
 import Head from "next/head";
+import AboutSection from "../components/AboutSection";
+import ExperienceSection from "../components/ExperienceSection";
+import Layout from "../components/Layout";
+import ProjectsSection from "../components/ProjectsSection";
+import QualificationsSection from "../components/QualificationsSection";
 
 const Home = () => {
 	return (<>

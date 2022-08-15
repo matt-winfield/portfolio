@@ -52,7 +52,7 @@ const EmploymentDuration = styled.span`
 	}
 `
 
-const startDate = DateTime.fromISO('2021-03-08T08:20:00');
+const startDate = DateTime.fromISO('2022-05-19T08:20:00');
 
 const getFormattedDate = (): string => {
 	const nowSeconds = Math.floor(DateTime.now().toSeconds());
@@ -77,7 +77,8 @@ const ExperienceSection = () => {
 		<Section title="Experience" id="experience">
 			<List>
 				<StyledUl>
-					<li>L1 Software Developer - Derivco Sports <EmploymentTimePeriod>2021 - now <EmploymentDuration>({formattedEmploymentDuration})</EmploymentDuration></EmploymentTimePeriod></li>
+					<li>L2 Software Developer - Derivco Sports <EmploymentTimePeriod>2022 - now <EmploymentDuration>({formattedEmploymentDuration})</EmploymentDuration></EmploymentTimePeriod></li>
+					<li>L1 Software Developer - Derivco Sports <EmploymentTimePeriod>2021 - 2022 <EmploymentDuration>(1 year)</EmploymentDuration></EmploymentTimePeriod></li>
 					<li>Apprentice Software Developer - Derivco Sports <EmploymentTimePeriod>2018 - 2021 <EmploymentDuration>(3 years)</EmploymentDuration></EmploymentTimePeriod></li>
 					<li>Software development internship - Derivco Sports <EmploymentTimePeriod>2017 <EmploymentDuration>(6 weeks)</EmploymentDuration></EmploymentTimePeriod></li>
 				</StyledUl>

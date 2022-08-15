@@ -1,8 +1,8 @@
-import { FunctionComponent } from "react";
-import styled, { useTheme } from 'styled-components';
-import { down, up } from "styled-breakpoints";
 import Image from 'next/image';
+import { FunctionComponent } from "react";
+import { down, up } from "styled-breakpoints";
 import { useBreakpoint } from 'styled-breakpoints/react-styled';
+import styled from 'styled-components';
 import { widthAspectRatio } from "../utils/next-image-utils";
 
 type SectionProps = {
@@ -13,17 +13,14 @@ type SectionProps = {
 }
 
 const Container = styled.div`
-	width: 95%;
+	width: 100%;
 	padding: 10px;
-	margin: 7px;
 	box-sizing: border-box;
-	border: 1px solid ${props => props.theme.palette.border.main};
+	border-bottom: 1px solid ${props => props.theme.palette.border.main};
 	position: relative;
-	border-radius: 10px;
 	background-color: ${props => props.theme.palette.background.default};
 
 	${down('sm')} {
-		margin: 20px auto;
 		text-align: center;
 	}
 

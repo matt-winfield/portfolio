@@ -16,7 +16,7 @@ const Buzzer = () => {
 		<Head>
 			<title>Lockdown Quiz Buzzer - Matt Winfield</title>
 		</Head>
-		<ProjectDetails title="Lockdown Quiz Buzzer" image={buzzerImage} imageAlt="Buzzer project cover image" languagesAndTechnologies={languages} codeLink="https://github.com/matt-winfield-quiz" demoLink="https://quiz.matt-winfield.com">
+		<ProjectDetails title="Lockdown Quiz Buzzer" image={buzzerImage} imageAlt="Buzzer project cover image" languagesAndTechnologies={languages} codeLink="https://github.com/matt-winfield-quiz">
 			<p>
 				During the COVID-19 lockdown, me and my friends would meet up on video calls and play
 				various online games together. We organised a virtual quiz, and needed some way of

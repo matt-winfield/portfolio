@@ -29,7 +29,7 @@ const AboutSection = () => {
 					I have a full-stack skill-set, with skills in front-end, API and database technologies.
 				</p>
 				<p>
-					My favourite languages/frameworks to use are Angular or React with TypeScript for front-end,
+					My favourite languages/frameworks to use are React with TypeScript for front-end,
 					C# (ASP.NET) for API development and relational databases for backend, but I have knowledge
 					of many others and am able to learn new tools quickly.
 				</p>

@@ -1,7 +1,7 @@
+import Head from "next/head";
+import { useState } from "react";
 import ProjectDetails from "../components/ProjectDetails";
 import chessImage from "../public/images/chess-cover.webp";
-import React, { useState } from "react";
-import Head from "next/head";
 
 const Chess = () => {
 	const [languages] = useState([
@@ -19,7 +19,7 @@ const Chess = () => {
 		<Head>
 			<title>Chess - Matt Winfield</title>
 		</Head>
-		<ProjectDetails title="Chess" languagesAndTechnologies={languages} codeLink='https://github.com/matt-winfield-chess' demoLink='https://chess.matt-winfield.com' image={chessImage} imageAlt="Chess project cover image">
+		<ProjectDetails title="Chess" languagesAndTechnologies={languages} codeLink='https://github.com/matt-winfield-chess' image={chessImage} imageAlt="Chess project cover image">
 			<p>
 				This project was developed as part of my third year dissertation for University. It is a
 				three tier web application which supports chess games played online between two people, single
