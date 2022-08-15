@@ -1,7 +1,7 @@
 import { IconButton, Tooltip } from '@material-ui/core';
 import DarkIcon from '@material-ui/icons/Brightness4';
 import LightIcon from '@material-ui/icons/Brightness7';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import 'styled-components/macro';
@@ -27,7 +27,6 @@ const prefersDarkMode = () => {
 
 const useTheme = (): [boolean, () => void] => {
 	const selectedTheme = useSelector((state: StoreState) => state.theme.selectedTheme);
-	const [isDark, setIsDark] = useState(false);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -43,17 +42,13 @@ const useTheme = (): [boolean, () => void] => {
 		}
 	}, [dispatch])
 
-	useEffect(() => {
-		setIsDark(selectedTheme === ThemeType.Dark);
-	}, [selectedTheme])
-
 	const toggleTheme = () => {
 		const newTheme = selectedTheme === ThemeType.Light ? ThemeType.Dark : ThemeType.Light;
 		dispatch(themeSet(newTheme));
 		localStorage.setItem(LocalStorageKey, newTheme);
 	}
 
-	return [isDark, toggleTheme];
+	return [selectedTheme === ThemeType.Dark, toggleTheme];
 }
 
 const ThemeToggle = () => {
