@@ -4,6 +4,7 @@ import { Hero } from '../components/Hero';
 import Layout from "../components/Layout";
 import ProjectsSection from "../components/ProjectsSection";
 import QualificationsSection from "../components/QualificationsSection";
+import { SkillsSection } from '../components/SkillsSection';
 
 const Home = () => {
 	return (<>
@@ -13,6 +14,7 @@ const Home = () => {
 		<Layout>
 			<Hero />
 			<ProjectsSection />
+			<SkillsSection />
 			<ExperienceSection />
 			<QualificationsSection />
 		</Layout>
