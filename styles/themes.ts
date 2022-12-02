@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createTheme } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 import { DefaultTheme } from "styled-components";
 
@@ -45,7 +45,7 @@ declare module 'styled-components' {
 	}
 }
 
-export const MaterialUiTheme = createMuiTheme({
+export const MaterialUiTheme = createTheme({
 	palette: {
 		primary: {
 			main: 'rgb(255, 255, 255)'

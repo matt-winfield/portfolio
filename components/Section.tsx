@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
 import { FunctionComponent } from "react";
 import { down, up } from "styled-breakpoints";
 import { useBreakpoint } from 'styled-breakpoints/react-styled';
@@ -7,7 +8,6 @@ import { widthAspectRatio } from "../utils/next-image-utils";
 
 type SectionProps = {
 	title: string,
-	id: string,
 	image?: StaticImageData,
 	imageAlt?: string
 }
@@ -15,38 +15,24 @@ type SectionProps = {
 const Container = styled.div`
 	width: 100%;
 	padding: 10px;
-	box-sizing: border-box;
-	border-bottom: 1px solid ${props => props.theme.palette.border.main};
-	position: relative;
-	background-color: ${props => props.theme.palette.background.default};
-
-	${down('sm')} {
-		text-align: center;
-	}
 
 	${up('md')} {
-		height: calc(100% - 14px);
-		width: calc(100% - 14px);
-		padding: 50px;
-		display: flex;
-		align-items: center;
+		margin-top: 150px;
+		margin-bottom: 100px;
+		padding: 10px 100px;
 	}
 `
 
-const Anchor = styled.div`
-	position: absolute;
-	top: -7px;
-	visibility: hidden;
-`
-
-const Heading = styled.h1`
+const Heading = styled(motion.h1)`
 	${up('md')} {
 		display: inline-block;
 		font-size: 62px;
 		font-weight: bold;
 		border-bottom: 2px solid ${props => props.theme.palette.secondary.main};
-		position: absolute;
-		top: -100px;
+	}
+
+	${down('sm')} {
+		text-align: center;
 	}
 `
 
@@ -62,9 +48,14 @@ const Content = styled.div`
 const Body = styled.div`
 	display: flex;
 	align-items: center;
+	padding: 10px;
 
 	${down('sm')} {
 		flex-direction: column-reverse;
+	}
+
+	${up('md')} {
+		padding: 50px 20px 0;
 	}
 `
 
@@ -83,14 +74,13 @@ const Section: FunctionComponent<SectionProps> = (props) => {
 
 	return (
 		<Container>
-			<Anchor id={props.id}></Anchor>
 			<Content>
-				<Heading>{props.title}</Heading>
+				<Heading initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }}>{props.title}</Heading>
 				<Body>
 					{props.children}
 					{props.image &&
 						<ImageContainer>
-							<Image src={props.image} alt={props.imageAlt} {...widthAspectRatio(props.image, imageWidth)} />
+							<Image src={props.image} alt={props.imageAlt ?? ''} {...widthAspectRatio(props.image, imageWidth)} />
 						</ImageContainer>
 					}
 				</Body>

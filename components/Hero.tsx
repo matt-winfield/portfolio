@@ -1,11 +1,12 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { SiCsharp, SiNextdotjs, SiReact } from 'react-icons/si';
 import { down, up } from 'styled-breakpoints';
 import styled from 'styled-components';
 
 const Container = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -145,10 +146,28 @@ const skillVariants = {
     }
 }
 
+const backgroundFadeOutStart = 0.5;
+const backgroundFadeOutEnd = 0.9;
+
 export const Hero = () => {
+    const { scrollY } = useScroll();
+    const [backgroundOpacity, setBackgroundOpacity] = useState(1);
+    const backgroundRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        scrollY.onChange((value) => {
+            if (backgroundRef.current) {
+                const progress = (value - backgroundFadeOutStart * backgroundRef.current.clientHeight) / (backgroundRef.current.clientHeight * (backgroundFadeOutEnd - backgroundFadeOutStart));
+                const opacity = 1 - progress;
+                const clampedOpacity = Math.max(0, Math.min(1, opacity));
+                setBackgroundOpacity(clampedOpacity);
+            }
+        })
+    }, [scrollY])
+
     return (
         <Container>
-            <Background initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} />
+            <Background initial={{ opacity: 0 }} whileInView={{ opacity: backgroundOpacity }} ref={backgroundRef} />
             <HeroText>
                 <Title initial={{ x: '-80%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, type: 'spring' }}>Matt Winfield</Title>
                 <Subtitle initial={{ x: '-80%', opacity: 0 }} animate={{ x: 0, opacity: 0.8 }} transition={{ delay: 0.2, duration: 0.4, type: 'spring' }}>Software Developer</Subtitle>

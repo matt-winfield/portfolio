@@ -1,15 +1,14 @@
-import React, { FunctionComponent } from "react";
-import ProjectButton from "./ProjectButton";
 import { Card } from "@material-ui/core";
 import CodeIcon from "@material-ui/icons/CodeRounded";
-import PlayIcon from "@material-ui/icons/PlayArrowRounded"
-import styled, { css } from "styled-components";
+import PlayIcon from "@material-ui/icons/PlayArrowRounded";
+import Image, { StaticImageData } from 'next/image';
+import { FunctionComponent } from "react";
 import { down, up } from "styled-breakpoints";
-import Layout from "./Layout";
-import Image from 'next/image';
 import { useBreakpoint } from "styled-breakpoints/react-styled";
+import styled, { css } from "styled-components";
 import { heightAspectRatio } from "../utils/next-image-utils";
-import { Head } from "next/document";
+import Layout from "./Layout";
+import ProjectButton from "./ProjectButton";
 
 type ProjectDetailsProps = {
 	title: string
@@ -67,7 +66,7 @@ const ProjectDetails: FunctionComponent<ProjectDetailsProps> = (props) => {
 				</div>
 				{props.image &&
 					<ImageContainer>
-						<Image src={props.image} alt={props.imageAlt} {...heightAspectRatio(props.image, imageHeight)} />
+						<Image src={props.image} alt={props.imageAlt ?? ''} {...heightAspectRatio(props.image, imageHeight)} />
 					</ImageContainer>
 				}
 			</Summary>

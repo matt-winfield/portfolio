@@ -4,6 +4,7 @@ import LightIcon from '@material-ui/icons/Brightness7';
 import styled, { css } from 'styled-components';
 import 'styled-components/macro';
 import { useToggleableTheme } from '../hooks/useToggleableTheme';
+import { ThemeType } from '../styles/themes';
 
 const StyledTooltip = styled(({ className, ...props }) => (
 	<Tooltip {...props} classes={{ popper: className }} />
@@ -14,7 +15,7 @@ const StyledTooltip = styled(({ className, ...props }) => (
 `;
 
 const ThemeToggle = () => {
-	const [isDark, toggleTheme] = useToggleableTheme();
+	const { selectedTheme, toggleTheme } = useToggleableTheme();
 
 	const onToggleClicked = () => {
 		toggleTheme();
@@ -23,7 +24,7 @@ const ThemeToggle = () => {
 	return (
 		<StyledTooltip title="Toggle Theme">
 			<IconButton color="primary" onClick={onToggleClicked} name="Dark Mode Toggle">
-				{isDark ?
+				{selectedTheme === ThemeType.Dark ?
 					<DarkIcon css={css`
 						color: ${props => props.theme.palette.text.primary};
 					`}></DarkIcon>

@@ -12,7 +12,7 @@ const prefersLightMode = () => {
 	return match.matches;
 };
 
-export const useToggleableTheme = (): [boolean, () => void] => {
+export const useToggleableTheme = () => {
 	const selectedTheme = useSelector((state: StoreState) => state.theme.selectedTheme);
 	const dispatch = useDispatch();
 
@@ -35,5 +35,5 @@ export const useToggleableTheme = (): [boolean, () => void] => {
 		localStorage.setItem(LocalStorageKey, newTheme);
 	}
 
-	return [selectedTheme === ThemeType.Dark, toggleTheme];
+	return { selectedTheme, toggleTheme };
 }

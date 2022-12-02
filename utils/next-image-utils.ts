@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 type ImageDimensions = {
 	width: number,
 	height: number
