@@ -75,7 +75,7 @@ const lightTheme: DefaultTheme = {
 			light: 'rgb(128, 131, 170)'
 		},
 		heading: {
-			background: 'rgb(167, 167, 167)'
+			background: 'rgb(221, 221, 221)'
 		},
 		button: {
 			background: 'rgb(255, 255, 255)',
