@@ -1,5 +1,4 @@
 import { createTheme } from "@material-ui/core";
-import { grey } from "@material-ui/core/colors";
 import { DefaultTheme } from "styled-components";
 
 declare module 'styled-components' {
@@ -76,7 +75,7 @@ const lightTheme: DefaultTheme = {
 			light: 'rgb(128, 131, 170)'
 		},
 		heading: {
-			background: grey[900]
+			background: 'rgb(167, 167, 167)'
 		},
 		button: {
 			background: 'rgb(255, 255, 255)',

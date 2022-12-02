@@ -143,7 +143,7 @@ export const Project = forwardRef<HTMLDivElement, ProjectProps>(({ project }, re
         }
 
         animateControls.start('normal');
-    }, [isDesktop, isHovered])
+    }, [isDesktop, isHovered, animateControls])
 
     return (
         <Container initial='normal' whileHover='hover' ref={ref} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
