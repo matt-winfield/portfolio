@@ -6,7 +6,7 @@ type SliceState = {
 }
 
 const initialState: SliceState = {
-	selectedTheme: ThemeType.Light
+	selectedTheme: ThemeType.Dark
 }
 
 export const themeSlice = createSlice({

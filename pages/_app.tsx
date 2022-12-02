@@ -1,9 +1,9 @@
 /// <reference types="styled-components/cssprop" />
-import type { AppProps } from 'next/app'
 import { StylesProvider } from '@material-ui/core/styles';
+import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
-import store, { createStore } from '../store/store';
 import { createGlobalStyle } from 'styled-components';
+import store, { createStore } from '../store/store';
 
 
 const GlobalStyle = createGlobalStyle`

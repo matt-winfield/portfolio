@@ -1,6 +1,6 @@
 import Head from "next/head";
-import AboutSection from "../components/AboutSection";
 import ExperienceSection from "../components/ExperienceSection";
+import { Hero } from '../components/Hero';
 import Layout from "../components/Layout";
 import ProjectsSection from "../components/ProjectsSection";
 import QualificationsSection from "../components/QualificationsSection";
@@ -11,7 +11,7 @@ const Home = () => {
 			<title>Matt Winfield - Digital Portfolio</title>
 		</Head>
 		<Layout>
-			<AboutSection />
+			<Hero />
 			<ProjectsSection />
 			<ExperienceSection />
 			<QualificationsSection />

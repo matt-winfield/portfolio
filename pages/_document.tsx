@@ -1,6 +1,6 @@
-import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
 import { ServerStyleSheets as MuiServerStyleSheets } from '@material-ui/styles';
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
 	render() {
@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
 			<Html>
 				<Head>
 					<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
+					<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet"></link>
 				</Head>
 				<body>
 					<Main />

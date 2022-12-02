@@ -15,6 +15,7 @@ declare module 'styled-components' {
 			},
 			secondary: {
 				main: string,
+				alternate: string
 			},
 			text: {
 				primary: string,
@@ -66,7 +67,8 @@ const lightTheme: DefaultTheme = {
 			dark: 'rgb(20, 20, 20)'
 		},
 		secondary: {
-			main: 'rgb(240, 109, 0)'
+			main: 'rgb(240, 109, 0)',
+			alternate: 'rgb(62, 245, 220)'
 		},
 		text: {
 			primary: 'rgb(0, 0, 0)',
@@ -106,7 +108,8 @@ const darkTheme: DefaultTheme = {
 			dark: 'rgb(80, 80, 80)'
 		},
 		secondary: {
-			main: 'rgb(240, 109, 0)'
+			main: 'rgb(240, 109, 0)',
+			alternate: 'rgb(62, 245, 220)'
 		},
 		text: {
 			primary: 'rgb(255, 255, 255)',
