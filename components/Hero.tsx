@@ -58,6 +58,10 @@ const HeroText = styled.div`
     flex-grow: 1;
     overflow: hidden;
 
+    ${down('md')} {
+        margin-left: 0;
+    }
+
     ${down('sm')} {
         margin-left: 0;
         margin-top: 100px;
@@ -91,10 +95,13 @@ const Skills = styled(motion.div)`
     gap: 20px;
     font-size: 24px;
 
+    ${down('md')} {
+        margin-right: 0;
+    }
+
     ${down('sm')} {
         flex-direction: row;
         justify-content: space-around;
-        margin-right: 0;
         margin-bottom: 100px;
         gap: 0;
         font-size: 20px
