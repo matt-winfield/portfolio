@@ -1,5 +1,5 @@
-import { motion, useScroll } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import { SiCsharp, SiNextdotjs, SiReact } from 'react-icons/si';
 import { down, up } from 'styled-breakpoints';
 import styled from 'styled-components';
@@ -151,23 +151,19 @@ const backgroundFadeOutEnd = 0.9;
 
 export const Hero = () => {
     const { scrollY } = useScroll();
-    const [backgroundOpacity, setBackgroundOpacity] = useState(1);
     const backgroundRef = useRef<HTMLDivElement>(null);
+    const backgroundOpacity = useTransform(scrollY, (y) => {
+        if (!backgroundRef.current) return 1;
 
-    useEffect(() => {
-        scrollY.onChange((value) => {
-            if (backgroundRef.current) {
-                const progress = (value - backgroundFadeOutStart * backgroundRef.current.clientHeight) / (backgroundRef.current.clientHeight * (backgroundFadeOutEnd - backgroundFadeOutStart));
-                const opacity = 1 - progress;
-                const clampedOpacity = Math.max(0, Math.min(1, opacity));
-                setBackgroundOpacity(clampedOpacity);
-            }
-        })
-    }, [scrollY])
+        const progress = (y - backgroundFadeOutStart * backgroundRef.current.clientHeight) / (backgroundRef.current.clientHeight * (backgroundFadeOutEnd - backgroundFadeOutStart));
+        const opacity = 1 - progress;
+        const clampedOpacity = Math.max(0, Math.min(1, opacity));
+        return clampedOpacity;
+    });
 
     return (
         <Container>
-            <Background initial={{ opacity: 0 }} whileInView={{ opacity: backgroundOpacity }} ref={backgroundRef} />
+            <Background style={{ opacity: backgroundOpacity }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} ref={backgroundRef} />
             <HeroText>
                 <Title initial={{ x: '-80%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, type: 'spring' }}>Matt Winfield</Title>
                 <Subtitle initial={{ x: '-80%', opacity: 0 }} animate={{ x: 0, opacity: 0.8 }} transition={{ delay: 0.2, duration: 0.4, type: 'spring' }}>Software Developer</Subtitle>
