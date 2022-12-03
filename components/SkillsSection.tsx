@@ -20,6 +20,8 @@ const Container = styled(motion.div)`
 const Row = styled(motion.div)`
     display: flex;
     gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
 
     ${down('md')} {
         gap: 20px;
